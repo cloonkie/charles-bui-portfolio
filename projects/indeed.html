@@ -4,10 +4,75 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Indeed 2023 Media Plan — Charles Bui</title>
+  <meta name="description" content="A full media strategy to re-position Indeed with Gen Z jobseekers — SWOT analysis, consumer insights, guerrilla marketing, and a campaign built around job-search anxiety." />
+  <meta name="author" content="Charles Bui" />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://cloonkie.github.io/charles-bui-portfolio/projects/indeed.html" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article" />
+  <meta property="og:site_name" content="Charles Bui" />
+  <meta property="og:title" content="Indeed 2023 Media Plan — Charles Bui" />
+  <meta property="og:description" content="A full media strategy to re-position Indeed with Gen Z jobseekers — SWOT analysis, consumer insights, guerrilla marketing, and a campaign built around job-search anxiety." />
+  <meta property="og:url" content="https://cloonkie.github.io/charles-bui-portfolio/projects/indeed.html" />
+  <meta property="og:image" content="https://cloonkie.github.io/charles-bui-portfolio/assets/indeed-deck-01-cover.webp" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Indeed 2023 Media Plan — Charles Bui" />
+  <meta name="twitter:description" content="A full media strategy to re-position Indeed with Gen Z jobseekers — SWOT analysis, consumer insights, guerrilla marketing, and a campaign built around job-search anxiety." />
+  <meta name="twitter:image" content="https://cloonkie.github.io/charles-bui-portfolio/assets/indeed-deck-01-cover.webp" />
+
   <link rel="stylesheet" href="../styles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Host+Grotesk:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    /* Lightbox */
+    .lightbox {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 200;
+      background: rgba(0,0,0,0.88);
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      cursor: zoom-out;
+    }
+    .lightbox.open { display: flex; }
+    .lightbox img {
+      max-width: min(1200px, calc(100vw - 4rem));
+      max-height: calc(100vh - 4rem);
+      object-fit: contain;
+      border-radius: 2px;
+      box-shadow: 0 24px 80px rgba(0,0,0,0.6);
+      cursor: default;
+    }
+    .lightbox__close {
+      position: fixed;
+      top: 1.25rem;
+      right: 1.5rem;
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.22);
+      color: #fff;
+      width: 38px;
+      height: 38px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 1.1rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.15s;
+    }
+    .lightbox__close:hover { background: rgba(255,255,255,0.22); }
+
+    /* Expand hint on hover */
+    .book-page { cursor: zoom-in; }
+    .book-track.grabbing .book-page { cursor: grabbing; }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -54,17 +119,6 @@
       </div>
     </section>
 
-    <!-- Hero Image -->
-    <section class="section-light" style="padding-top:0;">
-      <div class="container">
-        <img
-          class="project-hero-image"
-          src="../assets/indeed-deck-01-cover.webp"
-          alt="Indeed 2023 Media Plan — Cover"
-        />
-      </div>
-    </section>
-
     <!-- Story: The Brief -->
     <section class="section section-light">
       <div class="container">
@@ -75,11 +129,7 @@
             <p class="story-section__text">Indeed had a brand problem. The pandemic reshuffled career expectations — especially for Gen Z, who entered the workforce with a different relationship to work, loyalty, and purpose. The brief: shift Indeed's perception from "job board you use when desperate" to "the career partner that actually gets you."</p>
           </div>
           <div>
-            <img
-              class="story-img" loading="lazy"
-              src="../assets/indeed-deck-03-executive-summary.webp"
-              alt="Executive Summary — business context and problem"
-            />
+            <img class="story-img" loading="lazy" src="../assets/indeed-deck-03-executive-summary.webp" alt="Executive Summary — business context and problem" />
           </div>
         </div>
 
@@ -90,11 +140,7 @@
             <p class="story-section__text">We mapped the competitive set — LinkedIn's professional prestige, Monster's legacy, ZipRecruiter's automation play — and found the white space: none of them were speaking to anxiety. They were all selling "get a job." We wanted to address what it actually feels like to be looking.</p>
           </div>
           <div>
-            <img
-              class="story-img" loading="lazy"
-              src="../assets/indeed-deck-05-competitive-landscape.webp"
-              alt="Competitive landscape — LinkedIn, Monster, ZipRecruiter"
-            />
+            <img class="story-img" loading="lazy" src="../assets/indeed-deck-05-competitive-landscape.webp" alt="Competitive landscape — LinkedIn, Monster, ZipRecruiter" />
           </div>
         </div>
 
@@ -105,11 +151,7 @@
             <p class="story-section__text">We built toward three measurable targets: grow organic SEO traffic by 30%, generate 500M campaign impressions, and grow Indeed's social presence by 86%. These weren't vanity metrics — each connected to a different stage of the Gen Z awareness funnel.</p>
           </div>
           <div>
-            <img
-              class="story-img" loading="lazy"
-              src="../assets/indeed-deck-09-challenge.webp"
-              alt="Campaign challenge — three objectives"
-            />
+            <img class="story-img" loading="lazy" src="../assets/indeed-deck-09-challenge.webp" alt="Campaign challenge — three objectives" />
           </div>
         </div>
 
@@ -120,17 +162,13 @@
             <p class="story-section__text">We developed four distinct Gen Z personas — Sarah (the anxious parent), Samantha (the recent grad), Alexa (the side-hustling student), and Joshua (the free spirit). Different situations, same emotional core. That insight drove everything downstream.</p>
           </div>
           <div>
-            <img
-              class="story-img" loading="lazy"
-              src="../assets/indeed-deck-13-personas.webp"
-              alt="Four Gen Z personas — Sarah, Samantha, Alexa, Joshua"
-            />
+            <img class="story-img" loading="lazy" src="../assets/indeed-deck-13-personas.webp" alt="Four Gen Z personas — Sarah, Samantha, Alexa, Joshua" />
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Big Idea — Full Width -->
+    <!-- Big Idea -->
     <section class="section section-dark">
       <div class="container">
         <div class="story-section--full" style="text-align:center; margin-bottom: 3rem;">
@@ -138,67 +176,168 @@
           <h2 class="story-section__title" style="font-size:clamp(2rem,4vw,3.5rem); max-width:20ch; margin:0 auto 1.25rem; text-align:center;">"Anxiety Ends When Indeed Begins."</h2>
           <p class="story-section__text" style="max-width:52ch; margin:0 auto; text-align:center;">The campaign concept meets Gen Z in the feeling they know best — job-search anxiety — and positions Indeed as the thing that ends it. Not a platform. A relief.</p>
         </div>
-        <img
-          class="story-img" loading="lazy"
-          src="../assets/indeed-deck-15-big-idea.webp"
-          alt="Big idea — Anxiety Ends When Indeed Begins"
-          style="max-width:860px; margin:0 auto; width:100%; aspect-ratio:16/9;"
-        />
+        <img class="story-img" loading="lazy" src="../assets/indeed-deck-15-big-idea.webp" alt="Big idea — Anxiety Ends When Indeed Begins" style="max-width:860px; margin:0 auto; width:100%; aspect-ratio:16/9;" />
       </div>
     </section>
 
-    <!-- Slide Deck Grid -->
-    <section class="section section-light">
+    <!-- Full Deck -->
+    <section class="section section-light" style="padding-bottom:0;">
       <div class="container">
         <div class="section-heading">
-          <span>The Strategy</span>
-          <h2>From geography to guerrilla.</h2>
-        </div>
-
-        <div class="slide-deck">
-
-          <div class="slide-item">
-            <img loading="lazy" src="../assets/indeed-deck-16-geography.webp" alt="Geography — Houston local plan" />
-            <div class="slide-item__caption">Geography — Houston rollout</div>
-          </div>
-
-          <div class="slide-item">
-            <img loading="lazy" src="../assets/indeed-deck-21-media-model.webp" alt="Media model — Paid, Earned, Owned" />
-            <div class="slide-item__caption">Media model — Paid / Earned / Owned</div>
-          </div>
-
-          <div class="slide-item">
-            <img loading="lazy" src="../assets/indeed-deck-23-digital-media.webp" alt="Digital media — Spotify and Hulu" />
-            <div class="slide-item__caption">Digital — Spotify &amp; Hulu placements</div>
-          </div>
-
-          <div class="slide-item">
-            <img loading="lazy" src="../assets/indeed-deck-26-media-tactics.webp" alt="Guerrilla media tactic — Delta 8 giveaway" />
-            <div class="slide-item__caption">Guerrilla — Delta 8 giveaway tactic</div>
-          </div>
-
-          <div class="slide-item">
-            <img loading="lazy" src="../assets/indeed-deck-27-influencers.webp" alt="Influencer strategy — Shaquille O'Neal and Kevin Jonas" />
-            <div class="slide-item__caption">Influencers — Shaq &amp; Kevin Jonas</div>
-          </div>
-
-          <div class="slide-item">
-            <img loading="lazy" src="../assets/indeed-deck-34-out-of-home.webp" alt="Out-of-home — billboard strategy across 5 cities" />
-            <div class="slide-item__caption">OOH — Billboard strategy, 5 cities</div>
-          </div>
-
+          <span>The Full Deck</span>
+          <h2>All 34 slides. Flip through.</h2>
         </div>
       </div>
     </section>
 
+    <!-- Book Viewer -->
+    <div class="book-viewer">
+      <div class="book-body">
+
+        <div class="book-track" id="bookTrack">
+
+          <div class="book-spread">
+            <div class="book-page"><img src="../assets/indeed-deck-01-cover.webp" alt="Cover" /></div>
+            <div class="book-page"><img loading="lazy" src="../assets/indeed-deck-03-executive-summary.webp" alt="Executive Summary" /></div>
+          </div>
+          <div class="book-spread">
+            <div class="book-page"><img loading="lazy" src="../assets/indeed-deck-04-overview.webp" alt="Overview" /></div>
+            <div class="book-page"><img loading="lazy" src="../assets/indeed-deck-05-competitive-landscape.webp" alt="Competitive Landscape" /></div>
+          </div>
+          <div class="book-spread">
+            <div class="book-page"><img loading="lazy" src="../assets/indeed-deck-06-brand-analysis.webp" alt="Brand Analysis" /></div>
+            <div class="book-page"><img loading="lazy" src="../assets/indeed-deck-07-swot.webp" alt="SWOT Analysis" /></div>
+          </div>
+          <div class="book-spread">
+            <div class="book-page"><img loading="lazy" src="../assets/indeed-deck-08-target-audience.webp" alt="Target Audience" /></div>
+            <div class="book-page"><img loading="lazy" src="../assets/indeed-deck-09-challenge.webp" alt="The Challenge" /></div>
+          </div>
+          <div class="book-spread">
+            <div class="book-page"><img loading="lazy" src="../assets/indeed-deck-11-gen-z-insights.webp" alt="Gen Z Insights" /></div>
+            <div class="book-page"><img loading="lazy" src="../assets/indeed-deck-12-consumer-behavior.webp" alt="Consumer Behavior" /></div>
+          </div>
+          <div class="book-spread">
+            <div class="book-page"><img loading="lazy" src="../assets/indeed-deck-13-personas.webp" alt="Personas" /></div>
+            <div class="book-page"><img loading="lazy" src="../assets/indeed-deck-15-big-idea.webp" alt="Big Idea" /></div>
+          </div>
+          <div class="book-spread">
+            <div class="book-page"><img loading="lazy" src="../assets/indeed-deck-15b-big-idea-2.webp" alt="Big Idea (cont.)" /></div>
+            <div class="book-page"><img loading="lazy" src="../assets/indeed-deck-16-geography.webp" alt="Geography" /></div>
+          </div>
+          <div class="book-spread">
+            <div class="book-page"><img loading="lazy" src="../assets/indeed-deck-17-campaign-strategy.webp" alt="Campaign Strategy" /></div>
+            <div class="book-page"><img loading="lazy" src="../assets/indeed-deck-18-media-mix.webp" alt="Media Mix" /></div>
+          </div>
+          <div class="book-spread">
+            <div class="book-page"><img loading="lazy" src="../assets/indeed-deck-19-guerrilla-marketing.webp" alt="Guerrilla Marketing" /></div>
+            <div class="book-page"><img loading="lazy" src="../assets/indeed-deck-20-event-strategy.webp" alt="Event Strategy" /></div>
+          </div>
+          <div class="book-spread">
+            <div class="book-page"><img loading="lazy" src="../assets/indeed-deck-21-media-model.webp" alt="Media Model" /></div>
+            <div class="book-page"><img loading="lazy" src="../assets/indeed-deck-23-digital-media.webp" alt="Digital Media" /></div>
+          </div>
+          <div class="book-spread">
+            <div class="book-page"><img loading="lazy" src="../assets/indeed-deck-24-digital-media-2.webp" alt="Digital Media (cont.)" /></div>
+            <div class="book-page"><img loading="lazy" src="../assets/indeed-deck-25-digital-media-3.webp" alt="Digital Media (cont.)" /></div>
+          </div>
+          <div class="book-spread">
+            <div class="book-page"><img loading="lazy" src="../assets/indeed-deck-26-media-tactics.webp" alt="Media Tactics" /></div>
+            <div class="book-page"><img loading="lazy" src="../assets/indeed-deck-26b-media-tactics-2.webp" alt="Media Tactics (cont.)" /></div>
+          </div>
+          <div class="book-spread">
+            <div class="book-page"><img loading="lazy" src="../assets/indeed-deck-26c-media-tactics-3.webp" alt="Media Tactics (cont.)" /></div>
+            <div class="book-page"><img loading="lazy" src="../assets/indeed-deck-27-influencers.webp" alt="Influencers" /></div>
+          </div>
+          <div class="book-spread">
+            <div class="book-page"><img loading="lazy" src="../assets/indeed-deck-30-budget-overview.webp" alt="Budget Overview" /></div>
+            <div class="book-page"><img loading="lazy" src="../assets/indeed-deck-31-budget-breakdown.webp" alt="Budget Breakdown" /></div>
+          </div>
+          <div class="book-spread">
+            <div class="book-page"><img loading="lazy" src="../assets/indeed-deck-32-timeline.webp" alt="Timeline" /></div>
+            <div class="book-page"><img loading="lazy" src="../assets/indeed-deck-34-out-of-home.webp" alt="Out of Home" /></div>
+          </div>
+          <div class="book-spread">
+            <div class="book-page"><img loading="lazy" src="../assets/indeed-deck-34b-out-of-home-2.webp" alt="Out of Home (cont.)" /></div>
+            <div class="book-page"><img loading="lazy" src="../assets/indeed-deck-35-evaluation.webp" alt="Evaluation" /></div>
+          </div>
+          <div class="book-spread">
+            <div class="book-page"><img loading="lazy" src="../assets/indeed-deck-36-conclusion.webp" alt="Conclusion" /></div>
+            <div class="book-page"><img loading="lazy" src="../assets/indeed-deck-37-sources.webp" alt="Sources" /></div>
+          </div>
+
+        </div>
+
+        <!-- Chapter sidebar -->
+        <nav class="book-sidebar" id="bookSidebar" aria-label="Deck chapters">
+          <!-- data-start/end = spread index (0-based) -->
+          <div class="book-chapter active" data-start="0" data-end="0">
+            <div class="book-chapter__line"><div class="book-chapter__fill"></div></div>
+            <span class="book-chapter__name">Cover</span>
+          </div>
+          <div class="book-chapter" data-start="0" data-end="1">
+            <div class="book-chapter__line"><div class="book-chapter__fill"></div></div>
+            <span class="book-chapter__name">Overview</span>
+          </div>
+          <div class="book-chapter" data-start="1" data-end="2">
+            <div class="book-chapter__line"><div class="book-chapter__fill"></div></div>
+            <span class="book-chapter__name">Landscape</span>
+          </div>
+          <div class="book-chapter" data-start="3" data-end="3">
+            <div class="book-chapter__line"><div class="book-chapter__fill"></div></div>
+            <span class="book-chapter__name">Audience</span>
+          </div>
+          <div class="book-chapter" data-start="4" data-end="5">
+            <div class="book-chapter__line"><div class="book-chapter__fill"></div></div>
+            <span class="book-chapter__name">Insights</span>
+          </div>
+          <div class="book-chapter" data-start="5" data-end="6">
+            <div class="book-chapter__line"><div class="book-chapter__fill"></div></div>
+            <span class="book-chapter__name">Big Idea</span>
+          </div>
+          <div class="book-chapter" data-start="6" data-end="9">
+            <div class="book-chapter__line"><div class="book-chapter__fill"></div></div>
+            <span class="book-chapter__name">Strategy</span>
+          </div>
+          <div class="book-chapter" data-start="9" data-end="12">
+            <div class="book-chapter__line"><div class="book-chapter__fill"></div></div>
+            <span class="book-chapter__name">Tactics</span>
+          </div>
+          <div class="book-chapter" data-start="13" data-end="14">
+            <div class="book-chapter__line"><div class="book-chapter__fill"></div></div>
+            <span class="book-chapter__name">Budget</span>
+          </div>
+          <div class="book-chapter" data-start="14" data-end="15">
+            <div class="book-chapter__line"><div class="book-chapter__fill"></div></div>
+            <span class="book-chapter__name">OOH</span>
+          </div>
+          <div class="book-chapter" data-start="15" data-end="16">
+            <div class="book-chapter__line"><div class="book-chapter__fill"></div></div>
+            <span class="book-chapter__name">Close</span>
+          </div>
+        </nav>
+
+      </div>
+      <div class="book-controls">
+        <button class="book-btn" id="bookPrev" aria-label="Previous spread" disabled>&#8592;</button>
+        <span class="book-counter" id="bookCounter">1–2 / 34</span>
+        <button class="book-btn" id="bookNext" aria-label="Next spread">&#8594;</button>
+      </div>
+    </div>
+
     <!-- Back Nav -->
-    <section class="section-light" style="padding-bottom:5rem;">
-      <div class="container" style="display:flex; gap:1rem;">
+    <section class="section-light" style="padding-bottom:5rem; padding-top:4rem;">
+      <div class="container" style="display:flex; justify-content:space-between; gap:1rem;">
         <a class="button button-secondary" href="../work.html">&larr; All work</a>
         <a class="button button-primary" href="usc-capstone.html">Next project &rarr;</a>
       </div>
     </section>
   </main>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Expanded slide">
+    <button class="lightbox__close" id="lightboxClose" aria-label="Close">&#x2715;</button>
+    <img id="lightboxImg" src="" alt="" />
+  </div>
 
   <footer class="site-footer">
     <div class="container footer-inner">
@@ -213,5 +352,126 @@
   </footer>
 
   <script src="../script.js"></script>
+  <script>
+  (function () {
+    const track    = document.getElementById('bookTrack');
+    const counter  = document.getElementById('bookCounter');
+    const prevBtn  = document.getElementById('bookPrev');
+    const nextBtn  = document.getElementById('bookNext');
+    const lightbox = document.getElementById('lightbox');
+    const lbImg    = document.getElementById('lightboxImg');
+    const lbClose  = document.getElementById('lightboxClose');
+    if (!track) return;
+
+    const spreads  = track.querySelectorAll('.book-spread');
+    const total    = spreads.length;        // 17 spreads
+    const chapters = Array.from(document.querySelectorAll('.book-chapter'));
+
+    /* ── helpers ── */
+    function spreadIndex() {
+      return Math.round(track.scrollLeft / track.clientWidth);
+    }
+
+    function scrollToSpread(idx) {
+      track.scrollTo({ left: idx * track.clientWidth, behavior: 'smooth' });
+    }
+
+    /* ── sidebar ── */
+    function updateSidebar(idx) {
+      chapters.forEach(function (ch) {
+        const start = +ch.dataset.start;
+        const end   = +ch.dataset.end;
+        const fill  = ch.querySelector('.book-chapter__fill');
+        ch.classList.toggle('active', idx >= start && idx <= end);
+        var pct;
+        if (idx < start)      pct = 0;
+        else if (idx > end)   pct = 100;
+        else pct = end === start ? 100 : Math.round(((idx - start) / (end - start)) * 100);
+        fill.style.height = pct + '%';
+      });
+    }
+
+    /* ── counter ── */
+    function update() {
+      var idx  = spreadIndex();
+      var s1   = idx * 2 + 1;
+      var s2   = Math.min(idx * 2 + 2, 34);
+      counter.textContent = s1 + '–' + s2 + ' / 34';
+      prevBtn.disabled = idx === 0;
+      nextBtn.disabled = idx === total - 1;
+      updateSidebar(idx);
+    }
+
+    track.addEventListener('scroll', update, { passive: true });
+
+    prevBtn.addEventListener('click', function () {
+      scrollToSpread(Math.max(0, spreadIndex() - 1));
+    });
+
+    nextBtn.addEventListener('click', function () {
+      scrollToSpread(Math.min(total - 1, spreadIndex() + 1));
+    });
+
+    /* chapter click */
+    chapters.forEach(function (ch) {
+      ch.addEventListener('click', function () {
+        scrollToSpread(+ch.dataset.start);
+      });
+    });
+
+    /* keyboard */
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'ArrowLeft')  prevBtn.click();
+      if (e.key === 'ArrowRight') nextBtn.click();
+      if (e.key === 'Escape')     closeLightbox();
+    });
+
+    /* drag-to-scroll */
+    var startX = 0, startScroll = 0, dragging = false, didDrag = false;
+    track.addEventListener('mousedown', function (e) {
+      dragging = true; didDrag = false;
+      startX = e.pageX; startScroll = track.scrollLeft;
+      track.classList.add('grabbing');
+    });
+    document.addEventListener('mousemove', function (e) {
+      if (!dragging) return;
+      var dx = e.pageX - startX;
+      if (Math.abs(dx) > 4) didDrag = true;
+      track.scrollLeft = startScroll - dx;
+    });
+    document.addEventListener('mouseup', function () {
+      dragging = false;
+      track.classList.remove('grabbing');
+    });
+
+    /* ── Lightbox ── */
+    function openLightbox(src, alt) {
+      lbImg.src = src;
+      lbImg.alt = alt;
+      lightbox.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    track.querySelectorAll('.book-page').forEach(function (page) {
+      page.addEventListener('click', function (e) {
+        if (didDrag) return;
+        var img = page.querySelector('img');
+        if (img) openLightbox(img.src, img.alt);
+      });
+    });
+
+    lightbox.addEventListener('click', function (e) {
+      if (e.target === lightbox) closeLightbox();
+    });
+    lbClose.addEventListener('click', closeLightbox);
+
+    update();
+  })();
+  </script>
 </body>
 </html>

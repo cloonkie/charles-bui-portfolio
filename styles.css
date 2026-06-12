@@ -149,8 +149,8 @@ p { margin: 0; }
 
 /* ── Hero ── */
 .hero {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+  padding-top: 9rem;
+  padding-bottom: 9rem;
 }
 
 .hero h1 {
@@ -816,6 +816,195 @@ p { margin: 0; }
   text-transform: uppercase;
   color: var(--muted);
   margin-top: 0.5rem;
+}
+
+/* ── Book viewer ── */
+.book-viewer {
+  background: var(--bg);
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+
+.book-body {
+  display: flex;
+  align-items: stretch;
+}
+
+.book-track {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  height: clamp(300px, 62vh, 640px);
+  cursor: grab;
+}
+
+.book-track::-webkit-scrollbar { display: none; }
+.book-track.grabbing { cursor: grabbing; }
+
+/* Two-page spread — snaps at spread level */
+.book-spread {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  display: flex;
+  align-items: stretch;
+  height: 100%;
+}
+
+.book-page {
+  flex: 1 1 0;
+  min-width: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1.5vw;
+  height: 100%;
+  user-select: none;
+  position: relative;
+}
+
+/* Spine line between left and right page */
+.book-spread .book-page:first-child::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  top: 10%;
+  height: 80%;
+  width: 1px;
+  background: var(--border-solid);
+}
+
+.book-page img {
+  max-height: 100%;
+  max-width: 100%;
+  width: auto;
+  object-fit: contain;
+  box-shadow:
+    0 1px 3px rgba(0,0,0,0.07),
+    0 8px 28px rgba(0,0,0,0.11),
+    0 2px 6px rgba(0,0,0,0.05);
+  border: 1px solid var(--border-solid);
+  border-radius: 1px;
+  display: block;
+  pointer-events: none;
+}
+
+/* Sidebar */
+.book-sidebar {
+  width: 118px;
+  flex-shrink: 0;
+  border-left: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  padding: 1.75rem 0;
+  overflow: hidden;
+}
+
+.book-chapter {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.55rem;
+  padding: 0.25rem 0.85rem 0.25rem 0.75rem;
+  flex: 1;
+  cursor: pointer;
+  min-height: 0;
+  transition: background 0.15s;
+}
+
+.book-chapter:hover { background: var(--surface); }
+
+.book-chapter__line {
+  flex-shrink: 0;
+  width: 2px;
+  align-self: stretch;
+  background: var(--border-solid);
+  border-radius: 1px;
+  position: relative;
+  overflow: hidden;
+  min-height: 6px;
+}
+
+.book-chapter__fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background: var(--text);
+  border-radius: 1px;
+  transition: height 0.15s;
+}
+
+.book-chapter__name {
+  font-family: var(--font-grotesk);
+  font-size: 0.58rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--muted);
+  line-height: 1.3;
+  padding-top: 1px;
+  transition: color 0.15s;
+}
+
+.book-chapter.active .book-chapter__name { color: var(--text); }
+
+/* Controls */
+.book-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 0.85rem 1rem 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.book-btn {
+  background: transparent;
+  border: 1px solid var(--border-solid);
+  color: var(--text);
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s, border-color 0.15s;
+  flex-shrink: 0;
+  font-size: 0.95rem;
+  line-height: 1;
+}
+
+.book-btn:hover {
+  background: var(--surface);
+  border-color: var(--muted);
+}
+
+.book-btn:disabled {
+  opacity: 0.25;
+  cursor: default;
+  pointer-events: none;
+}
+
+.book-counter {
+  font-family: var(--font-grotesk);
+  font-size: 0.68rem;
+  letter-spacing: 0.14em;
+  color: var(--muted);
+  min-width: 6ch;
+  text-align: center;
+  font-weight: 500;
+}
+
+@media (max-width: 640px) {
+  .book-sidebar { display: none; }
+  .book-page { padding: 1.5rem 1.25rem; }
 }
 
 /* ── Footer ── */

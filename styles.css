@@ -1174,6 +1174,65 @@ body.custom-cursor-clicking .custom-cursor-dot {
   .book-page { padding: 1.5rem 1.25rem; }
 }
 
+/* ── Deck Strip ── */
+.deck-strip-wrapper {
+  background: var(--surface);
+  padding: 3rem 0;
+}
+
+.deck-strip {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-solid) transparent;
+  gap: 1rem;
+  padding: 0 2rem 1rem;
+  cursor: grab;
+}
+
+.deck-strip::-webkit-scrollbar { height: 3px; }
+.deck-strip::-webkit-scrollbar-track { background: transparent; }
+.deck-strip::-webkit-scrollbar-thumb { background: var(--border-solid); border-radius: 2px; }
+.deck-strip.grabbing { cursor: grabbing; }
+
+.deck-strip__item {
+  flex: 0 0 min(680px, 78vw);
+  scroll-snap-align: start;
+  border: 1px solid var(--border-solid);
+  border-radius: 2px;
+  overflow: hidden;
+  background: var(--surface-2);
+}
+
+.deck-strip__item img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: contain;
+  background: var(--surface-2);
+  display: block;
+}
+
+@media (max-width: 640px) {
+  .deck-strip { padding: 0 1rem 1rem; gap: 0.75rem; }
+  .deck-strip__item { flex: 0 0 85vw; }
+}
+
+/* ── Project Back Nav ── */
+.project-back-nav {
+  padding-top: 4rem;
+  padding-bottom: 5rem;
+}
+
+@media (max-width: 640px) {
+  .project-back-nav {
+    padding-top: 2.5rem;
+    padding-bottom: 2.5rem;
+  }
+}
+
 /* ── Footer ── */
 .site-footer {
   padding: 2.25rem 0;

@@ -255,8 +255,8 @@ body.custom-cursor-clicking .custom-cursor-dot {
 
 /* ── Hero ── */
 .hero {
-  padding-top: 9rem;
-  padding-bottom: 9rem;
+  padding-top: 4rem;
+  padding-bottom: 4rem;
 }
 
 .hero h1 {
@@ -595,6 +595,66 @@ body.custom-cursor-clicking .custom-cursor-dot {
   letter-spacing: 0.06em;
 }
 
+/* ── Hero Photo (index) ── */
+.hero-photo {
+  width: 100%;
+  overflow: hidden;
+  padding: 4rem 0;
+  background: var(--surface);
+}
+
+.hero-photo img {
+  width: 100%;
+  aspect-ratio: 21 / 9;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 640px) {
+  .hero-photo {
+    padding: 0;
+  }
+  .hero-photo img {
+    aspect-ratio: 4 / 3;
+  }
+}
+
+/* ── Resume Tabs ── */
+.resume-tabs { max-width: 800px; }
+
+.resume-tabs-nav {
+  display: flex;
+  gap: 0;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 3.5rem;
+}
+
+.resume-tab-btn {
+  font-family: var(--font-grotesk);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--muted);
+  background: transparent;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 0.9rem 2rem 0.9rem 0;
+  cursor: pointer;
+  transition: color 0.18s, border-color 0.18s;
+  margin-bottom: -1px;
+}
+
+.resume-tab-btn:hover { color: var(--text); }
+
+.resume-tab-btn.active {
+  color: var(--text);
+  border-bottom-color: var(--text);
+}
+
+.resume-tab-panel { display: none; }
+.resume-tab-panel.active { display: block; }
+
 /* ── Resume Image ── */
 .resume-image-section { padding-top: 0; padding-bottom: 2rem; }
 
@@ -630,7 +690,7 @@ body.custom-cursor-clicking .custom-cursor-dot {
 
 .resume-block-title {
   font-family: var(--font-grotesk);
-  font-size: 0.62rem;
+  font-size: 0.78rem;
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.22em;
@@ -662,9 +722,10 @@ body.custom-cursor-clicking .custom-cursor-dot {
 }
 
 .resume-entry-title {
-  font-family: var(--font-body);
+  font-family: var(--font-grotesk);
   font-weight: 700;
-  font-size: 0.95rem;
+  font-size: 1.1rem;
+  letter-spacing: -0.01em;
 }
 
 .resume-entry-date {
@@ -681,7 +742,7 @@ body.custom-cursor-clicking .custom-cursor-dot {
   font-family: var(--font-body);
   color: var(--muted);
   margin: 0 0 0.6rem;
-  font-size: 0.85rem;
+  font-size: 0.9rem;
   font-weight: 500;
 }
 

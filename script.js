@@ -1,4 +1,14 @@
 const currentFile = window.location.pathname.split('/').pop() || 'index.html';
+
+// Resume tabs
+document.querySelectorAll('.resume-tab-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('.resume-tab-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.resume-tab-panel').forEach(p => p.classList.remove('active'));
+    btn.classList.add('active');
+    document.getElementById(btn.dataset.tab).classList.add('active');
+  });
+});
 document.querySelectorAll('.nav-links a').forEach(link => {
   if (link.getAttribute('href') === currentFile) link.classList.add('active');
 });

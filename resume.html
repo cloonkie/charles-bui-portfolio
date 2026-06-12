@@ -55,12 +55,15 @@
     <!-- Resume Content -->
     <section class="section section-light resume-section-wrapper">
       <div class="container">
-        <div class="resume-grid">
+        <div class="resume-tabs">
+          <div class="resume-tabs-nav">
+            <button class="resume-tab-btn active" data-tab="tab-experience">Experience</button>
+            <button class="resume-tab-btn" data-tab="tab-education">Education</button>
+          </div>
 
-          <!-- Left: Experience -->
-          <div class="resume-col">
+          <!-- Experience Panel -->
+          <div id="tab-experience" class="resume-tab-panel active">
             <div class="resume-block">
-              <p class="resume-block-title">Experience</p>
 
               <div class="resume-entry">
                 <div class="resume-entry-header">
@@ -110,11 +113,10 @@
             </div>
           </div>
 
-          <!-- Right: Education + Hobbies -->
-          <div class="resume-col">
-
+          <!-- Education Panel -->
+          <div id="tab-education" class="resume-tab-panel">
             <div class="resume-block">
-              <p class="resume-block-title">Education</p>
+              <p class="resume-block-title">Degrees</p>
 
               <div class="resume-entry">
                 <div class="resume-entry-header">
@@ -166,8 +168,8 @@
                 <p class="resume-entry-desc">Bilingual (English / Vietnamese). Raised in Houston with deep roots in Asian American community spaces. I care about who gets to be in the room and who gets to tell their story.</p>
               </div>
             </div>
-
           </div>
+
         </div>
       </div>
     </section>

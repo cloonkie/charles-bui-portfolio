@@ -1176,7 +1176,6 @@ body.custom-cursor-clicking .custom-cursor-dot {
 
 /* ── Deck Strip ── */
 .deck-strip-wrapper {
-  background: var(--surface);
   padding: 3rem 0;
 }
 
@@ -1204,14 +1203,14 @@ body.custom-cursor-clicking .custom-cursor-dot {
   border: 1px solid var(--border-solid);
   border-radius: 2px;
   overflow: hidden;
-  background: var(--surface-2);
+  position: relative;
 }
 
 .deck-strip__item img {
   width: 100%;
-  aspect-ratio: 16 / 9;
+  height: auto;
+  max-height: min(52vh, 420px);
   object-fit: contain;
-  background: var(--surface-2);
   display: block;
 }
 

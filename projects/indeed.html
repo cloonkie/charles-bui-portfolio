@@ -36,19 +36,36 @@
       inset: 0;
       z-index: 200;
       background: rgba(0,0,0,0.88);
-      align-items: center;
+      align-items: flex-start;
       justify-content: center;
-      padding: 2rem;
-      cursor: zoom-out;
+      padding: 5rem 1.5rem 3rem;
+      overflow-y: auto;
+      cursor: default;
+      overscroll-behavior: contain;
     }
     .lightbox.open { display: flex; }
-    .lightbox img {
-      max-width: min(1200px, calc(100vw - 4rem));
-      max-height: calc(100vh - 4rem);
+    .lightbox__deck {
+      width: min(980px, calc(100vw - 3rem));
+      display: grid;
+      gap: 1.25rem;
+      padding-bottom: 2rem;
+    }
+    .lightbox__page {
+      transform-origin: left center;
+      perspective: 1600px;
+    }
+    .lightbox__page img {
+      width: 100%;
+      height: auto;
+      max-height: calc(100vh - 7rem);
       object-fit: contain;
       border-radius: 2px;
       box-shadow: 0 24px 80px rgba(0,0,0,0.6);
-      cursor: default;
+      display: block;
+      margin: 0 auto;
+    }
+    .lightbox.open .lightbox__page.is-current {
+      animation: expandedPageSettle 700ms cubic-bezier(.2,.72,.12,1) both;
     }
     .lightbox__close {
       position: fixed;
@@ -70,8 +87,61 @@
     .lightbox__close:hover { background: rgba(255,255,255,0.22); }
 
     /* Expand hint on hover */
-    .deck-strip__item { cursor: zoom-in; }
+    .deck-strip { perspective: 1800px; }
+    .deck-strip__item {
+      cursor: zoom-in;
+      transform-origin: left center;
+      transition: transform 260ms cubic-bezier(.2,.72,.12,1), box-shadow 260ms ease;
+      will-change: transform;
+    }
+    .deck-strip__item:hover {
+      box-shadow: 0 22px 60px rgba(0,0,0,0.16);
+      transform: translateY(-4px) rotateY(-2deg);
+    }
+    .deck-strip__item.is-flipping {
+      animation: pageFlipOpen 760ms cubic-bezier(.22,.72,.12,1) both;
+      pointer-events: none;
+    }
+    .deck-strip__item.is-flipping::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, rgba(255,255,255,0.04), rgba(255,255,255,0.55) 46%, rgba(0,0,0,0.14));
+      opacity: 0;
+      animation: pageFlipSheen 760ms cubic-bezier(.22,.72,.12,1) both;
+      pointer-events: none;
+    }
     .deck-strip.grabbing .deck-strip__item { cursor: grabbing; }
+
+    @keyframes pageFlipOpen {
+      0% { transform: translateY(0) rotateY(0deg) scale(1); }
+      38% { transform: translateY(-10px) rotateY(-28deg) scale(1.018); }
+      70% { transform: translateY(-6px) rotateY(5deg) scale(1.01); }
+      100% { transform: translateY(0) rotateY(0deg) scale(1); }
+    }
+
+    @keyframes pageFlipSheen {
+      0%, 100% { opacity: 0; transform: translateX(-32%); }
+      34% { opacity: 0.85; }
+      72% { opacity: 0.18; transform: translateX(26%); }
+    }
+
+    @keyframes expandedPageSettle {
+      0% { opacity: 0; transform: rotateY(-10deg) translateY(22px) scale(.985); }
+      100% { opacity: 1; transform: rotateY(0deg) translateY(0) scale(1); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .deck-strip__item,
+      .deck-strip__item:hover,
+      .deck-strip__item.is-flipping,
+      .lightbox.open .lightbox__page.is-current {
+        animation: none;
+        transition: none;
+        transform: none;
+      }
+      .deck-strip__item.is-flipping::after { display: none; }
+    }
   </style>
 </head>
 <body>
@@ -241,7 +311,7 @@
   <!-- Lightbox -->
   <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Expanded slide">
     <button class="lightbox__close" id="lightboxClose" aria-label="Close">&#x2715;</button>
-    <img id="lightboxImg" src="" alt="" />
+    <div class="lightbox__deck" id="lightboxDeck"></div>
   </div>
 
   <footer class="site-footer">
@@ -261,9 +331,15 @@
   (function () {
     var strip   = document.getElementById('deckStrip');
     var lightbox = document.getElementById('lightbox');
-    var lbImg   = document.getElementById('lightboxImg');
+    var lbDeck  = document.getElementById('lightboxDeck');
     var lbClose = document.getElementById('lightboxClose');
     if (!strip) return;
+    var deckItems = Array.prototype.slice.call(strip.querySelectorAll('.deck-strip__item'));
+    var deckImages = deckItems.map(function (item) {
+      return item.querySelector('img');
+    }).filter(Boolean);
+    var lightboxBuilt = false;
+    var scrollTarget = null;
 
     /* drag-to-scroll */
     var startX = 0, startScroll = 0, dragging = false, didDrag = false;
@@ -284,21 +360,57 @@
     });
 
     /* lightbox */
-    function openLightbox(src, alt) {
-      lbImg.src = src; lbImg.alt = alt;
+    function buildLightboxDeck() {
+      if (lightboxBuilt || !lbDeck) return;
+      deckImages.forEach(function (img, index) {
+        var page = document.createElement('figure');
+        var pageImg = document.createElement('img');
+        page.className = 'lightbox__page';
+        page.dataset.index = String(index);
+        pageImg.src = img.currentSrc || img.src;
+        pageImg.alt = img.alt || ('Deck page ' + (index + 1));
+        page.appendChild(pageImg);
+        lbDeck.appendChild(page);
+      });
+      lightboxBuilt = true;
+    }
+
+    function openLightbox(index) {
+      buildLightboxDeck();
+      if (!lbDeck) return;
+      lbDeck.querySelectorAll('.lightbox__page.is-current').forEach(function (page) {
+        page.classList.remove('is-current');
+      });
+      scrollTarget = lbDeck.querySelector('[data-index="' + index + '"]');
+      if (scrollTarget) scrollTarget.classList.add('is-current');
       lightbox.classList.add('open');
       document.body.style.overflow = 'hidden';
+      requestAnimationFrame(function () {
+        if (scrollTarget) {
+          scrollTarget.scrollIntoView({ block: 'center', inline: 'nearest' });
+          scrollTarget = null;
+        }
+      });
     }
+
     function closeLightbox() {
       lightbox.classList.remove('open');
       document.body.style.overflow = '';
     }
 
-    strip.querySelectorAll('.deck-strip__item').forEach(function (item) {
+    deckItems.forEach(function (item, index) {
       item.addEventListener('click', function () {
         if (didDrag) return;
-        var img = item.querySelector('img');
-        if (img) openLightbox(img.src, img.alt);
+        item.classList.remove('is-flipping');
+        void item.offsetWidth;
+        item.classList.add('is-flipping');
+        window.setTimeout(function () {
+          item.classList.remove('is-flipping');
+          openLightbox(index);
+        }, 360);
+      });
+      item.addEventListener('animationend', function () {
+        item.classList.remove('is-flipping');
       });
     });
 

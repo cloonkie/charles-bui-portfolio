@@ -36,28 +36,32 @@
       inset: 0;
       z-index: 200;
       background: rgba(0,0,0,0.88);
-      align-items: flex-start;
-      justify-content: center;
+      align-items: center;
+      justify-content: flex-start;
       padding: 5rem 1.5rem 3rem;
-      overflow-y: auto;
+      overflow-x: auto;
+      overflow-y: hidden;
       cursor: default;
       overscroll-behavior: contain;
     }
     .lightbox.open { display: flex; }
     .lightbox__deck {
-      width: min(980px, calc(100vw - 3rem));
-      display: grid;
+      width: max-content;
+      min-width: 100%;
+      display: flex;
+      align-items: center;
       gap: 1.25rem;
-      padding-bottom: 2rem;
+      padding: 0 calc((100vw - min(1080px, calc(100vw - 3rem))) / 2);
     }
     .lightbox__page {
+      flex: 0 0 auto;
       transform-origin: left center;
       perspective: 1600px;
     }
     .lightbox__page img {
-      width: 100%;
-      height: auto;
-      max-height: calc(100vh - 7rem);
+      width: auto;
+      height: calc(100vh - 8rem);
+      max-width: min(1080px, calc(100vw - 3rem));
       object-fit: contain;
       border-radius: 2px;
       box-shadow: 0 24px 80px rgba(0,0,0,0.6);
@@ -387,7 +391,7 @@
       document.body.style.overflow = 'hidden';
       requestAnimationFrame(function () {
         if (scrollTarget) {
-          scrollTarget.scrollIntoView({ block: 'center', inline: 'nearest' });
+          scrollTarget.scrollIntoView({ block: 'nearest', inline: 'center' });
           scrollTarget = null;
         }
       });
@@ -417,6 +421,11 @@
     lightbox.addEventListener('click', function (e) {
       if (e.target === lightbox) closeLightbox();
     });
+    lightbox.addEventListener('wheel', function (e) {
+      if (!lightbox.classList.contains('open') || Math.abs(e.deltaY) <= Math.abs(e.deltaX)) return;
+      e.preventDefault();
+      lightbox.scrollLeft += e.deltaY;
+    }, { passive: false });
     lbClose.addEventListener('click', closeLightbox);
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape') closeLightbox();

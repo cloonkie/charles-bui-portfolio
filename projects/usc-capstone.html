@@ -27,6 +27,12 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Host+Grotesk:wght@300;400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <style>
+    .story-img--rotate-minus-90 {
+      object-fit: contain;
+      transform: rotate(-90deg);
+    }
+  </style>
 </head>
 <body>
   <header class="site-header">
@@ -84,7 +90,7 @@
           </div>
           <div>
             <img
-              class="story-img" loading="lazy"
+              class="story-img story-img--rotate-minus-90" loading="lazy"
               src="../assets/usc-capstone-events-artist-guitar-stage.webp"
               alt="Female artist playing acoustic guitar on stage"
             />
@@ -150,127 +156,106 @@
         <div class="video-list">
 
           <div class="video-item">
-            <video controls muted playsinline preload="none">
-              <source src="../assets/usc-capstone-sizzle-establishing-shot.mp4" type="video/mp4" />
+            <video autoplay loop muted playsinline preload="none" tabindex="-1" aria-hidden="true">
+              <source data-src="../assets/usc-capstone-sizzle-establishing-shot.mp4" type="video/mp4" />
             </video>
             <p class="video-item__label">Establishing shot</p>
           </div>
 
           <div class="video-item">
-            <video controls muted playsinline preload="none">
-              <source src="../assets/usc-capstone-sizzle-concert-crowd.mp4" type="video/mp4" />
+            <video autoplay loop muted playsinline preload="none" tabindex="-1" aria-hidden="true">
+              <source data-src="../assets/usc-capstone-sizzle-concert-crowd.mp4" type="video/mp4" />
             </video>
             <p class="video-item__label">Concert crowd energy</p>
           </div>
 
           <div class="video-item">
-            <video controls muted playsinline preload="none">
-              <source src="../assets/usc-capstone-sizzle-dj-performance.mp4" type="video/mp4" />
+            <video autoplay loop muted playsinline preload="none" tabindex="-1" aria-hidden="true">
+              <source data-src="../assets/usc-capstone-sizzle-dj-performance.mp4" type="video/mp4" />
             </video>
             <p class="video-item__label">DJ performance</p>
           </div>
 
           <div class="video-item">
-            <video controls muted playsinline preload="none">
-              <source src="../assets/usc-capstone-sizzle-guitar-performance.mp4" type="video/mp4" />
+            <video autoplay loop muted playsinline preload="none" tabindex="-1" aria-hidden="true">
+              <source data-src="../assets/usc-capstone-sizzle-guitar-performance.mp4" type="video/mp4" />
             </video>
             <p class="video-item__label">Guitar performance</p>
           </div>
 
           <div class="video-item">
-            <video controls muted playsinline preload="none">
-              <source src="../assets/usc-capstone-sizzle-bw-singing.mp4" type="video/mp4" />
+            <video autoplay loop muted playsinline preload="none" tabindex="-1" aria-hidden="true">
+              <source data-src="../assets/usc-capstone-sizzle-bw-singing.mp4" type="video/mp4" />
             </video>
             <p class="video-item__label">B&amp;W vocal moment</p>
           </div>
 
           <div class="video-item">
-            <video controls muted playsinline preload="none">
-              <source src="../assets/usc-capstone-sizzle-cafe-performance.mp4" type="video/mp4" />
-            </video>
-            <p class="video-item__label">Café performance</p>
-          </div>
-
-          <div class="video-item">
-            <video controls muted playsinline preload="none">
-              <source src="../assets/usc-capstone-sizzle-attendee-dancing.mp4" type="video/mp4" />
+            <video autoplay loop muted playsinline preload="none" tabindex="-1" aria-hidden="true">
+              <source data-src="../assets/usc-capstone-sizzle-attendee-dancing.mp4" type="video/mp4" />
             </video>
             <p class="video-item__label">Attendee dancing</p>
           </div>
 
           <div class="video-item">
-            <video controls muted playsinline preload="none">
-              <source src="../assets/usc-capstone-sizzle-dj-mixing.mp4" type="video/mp4" />
+            <video autoplay loop muted playsinline preload="none" tabindex="-1" aria-hidden="true">
+              <source data-src="../assets/usc-capstone-sizzle-dj-mixing.mp4" type="video/mp4" />
             </video>
             <p class="video-item__label">DJ mixing close-up</p>
           </div>
 
           <div class="video-item">
-            <video controls muted playsinline preload="none">
-              <source src="../assets/usc-capstone-sizzle-violin-performance.mp4" type="video/mp4" />
+            <video autoplay loop muted playsinline preload="none" tabindex="-1" aria-hidden="true">
+              <source data-src="../assets/usc-capstone-sizzle-violin-performance.mp4" type="video/mp4" />
             </video>
             <p class="video-item__label">Violin performance</p>
           </div>
 
           <div class="video-item">
-            <video controls muted playsinline preload="none">
-              <source src="../assets/usc-capstone-sizzle-trumpet-performance.mp4" type="video/mp4" />
-            </video>
-            <p class="video-item__label">Trumpet performance</p>
-          </div>
-
-          <div class="video-item">
-            <video controls muted playsinline preload="none">
-              <source src="../assets/usc-capstone-sizzle-band-outdoor.mp4" type="video/mp4" />
-            </video>
-            <p class="video-item__label">Band outdoor set</p>
-          </div>
-
-          <div class="video-item">
-            <video controls muted playsinline preload="none">
-              <source src="../assets/usc-capstone-sizzle-concert-overview.mp4" type="video/mp4" />
+            <video autoplay loop muted playsinline preload="none" tabindex="-1" aria-hidden="true">
+              <source data-src="../assets/usc-capstone-sizzle-concert-overview.mp4" type="video/mp4" />
             </video>
             <p class="video-item__label">Full-venue overview</p>
           </div>
 
           <div class="video-item">
-            <video controls muted playsinline preload="none">
-              <source src="../assets/usc-capstone-sizzle-microphone-closeup.mp4" type="video/mp4" />
+            <video autoplay loop muted playsinline preload="none" tabindex="-1" aria-hidden="true">
+              <source data-src="../assets/usc-capstone-sizzle-microphone-closeup.mp4" type="video/mp4" />
             </video>
             <p class="video-item__label">Microphone close-up</p>
           </div>
 
           <div class="video-item">
-            <video controls muted playsinline preload="none">
-              <source src="../assets/usc-capstone-sizzle-dj-board.mp4" type="video/mp4" />
+            <video autoplay loop muted playsinline preload="none" tabindex="-1" aria-hidden="true">
+              <source data-src="../assets/usc-capstone-sizzle-dj-board.mp4" type="video/mp4" />
             </video>
             <p class="video-item__label">DJ board detail</p>
           </div>
 
           <div class="video-item">
-            <video controls muted playsinline preload="none">
-              <source src="../assets/usc-capstone-sizzle-dj-from-back.mp4" type="video/mp4" />
+            <video autoplay loop muted playsinline preload="none" tabindex="-1" aria-hidden="true">
+              <source data-src="../assets/usc-capstone-sizzle-dj-from-back.mp4" type="video/mp4" />
             </video>
             <p class="video-item__label">DJ from behind</p>
           </div>
 
           <div class="video-item">
-            <video controls muted playsinline preload="none">
-              <source src="../assets/usc-capstone-sizzle-couple-at-show.mp4" type="video/mp4" />
+            <video autoplay loop muted playsinline preload="none" tabindex="-1" aria-hidden="true">
+              <source data-src="../assets/usc-capstone-sizzle-couple-at-show.mp4" type="video/mp4" />
             </video>
             <p class="video-item__label">Couple at the show</p>
           </div>
 
           <div class="video-item">
-            <video controls muted playsinline preload="none">
-              <source src="../assets/usc-capstone-sizzle-club-crowd-red.mp4" type="video/mp4" />
+            <video autoplay loop muted playsinline preload="none" tabindex="-1" aria-hidden="true">
+              <source data-src="../assets/usc-capstone-sizzle-club-crowd-red.mp4" type="video/mp4" />
             </video>
             <p class="video-item__label">Club crowd — red light</p>
           </div>
 
           <div class="video-item">
-            <video controls muted playsinline preload="none">
-              <source src="../assets/usc-capstone-sizzle-crowd-running.mp4" type="video/mp4" />
+            <video autoplay loop muted playsinline preload="none" tabindex="-1" aria-hidden="true">
+              <source data-src="../assets/usc-capstone-sizzle-crowd-running.mp4" type="video/mp4" />
             </video>
             <p class="video-item__label">Crowd rush moment</p>
           </div>
@@ -301,5 +286,64 @@
   </footer>
 
   <script src="../script.js"></script>
+  <script>
+  (function () {
+    var videos = Array.prototype.slice.call(document.querySelectorAll('.video-item video'));
+    if (!videos.length) return;
+
+    function markUnavailable(video) {
+      var item = video.closest('.video-item');
+      if (item) item.hidden = true;
+    }
+
+    function loadVideo(video) {
+      if (video.dataset.loaded === 'true') return;
+      var sources = Array.prototype.slice.call(video.querySelectorAll('source[data-src]'));
+      sources.forEach(function (source) {
+        source.src = source.dataset.src;
+        source.removeAttribute('data-src');
+      });
+      video.dataset.loaded = 'true';
+      video.load();
+    }
+
+    function playVideo(video) {
+      loadVideo(video);
+      var playPromise = video.play();
+      if (playPromise && typeof playPromise.catch === 'function') {
+        playPromise.catch(function () {});
+      }
+    }
+
+    videos.forEach(function (video) {
+      video.controls = false;
+      video.muted = true;
+      video.loop = true;
+      video.playsInline = true;
+      video.addEventListener('error', function () { markUnavailable(video); });
+      Array.prototype.slice.call(video.querySelectorAll('source')).forEach(function (source) {
+        source.addEventListener('error', function () { markUnavailable(video); });
+      });
+    });
+
+    if (!('IntersectionObserver' in window)) {
+      videos.slice(0, 2).forEach(playVideo);
+      return;
+    }
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        var video = entry.target;
+        if (entry.isIntersecting) {
+          playVideo(video);
+        } else {
+          video.pause();
+        }
+      });
+    }, { rootMargin: '180px 0px', threshold: 0.2 });
+
+    videos.forEach(function (video) { observer.observe(video); });
+  })();
+  </script>
 </body>
 </html>

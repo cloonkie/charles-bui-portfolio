@@ -894,6 +894,12 @@ body.custom-cursor-clicking .custom-cursor-dot {
   background: var(--surface-2);
 }
 
+.story-img--portrait {
+  aspect-ratio: auto;
+  height: auto;
+  object-fit: contain;
+}
+
 /* Photo gallery grid */
 .gallery-grid {
   display: grid;
@@ -987,6 +993,51 @@ body.custom-cursor-clicking .custom-cursor-dot {
   text-transform: uppercase;
   color: var(--muted);
   margin-top: 0.5rem;
+}
+
+/* Embedded Figma deliverables */
+.embed-list {
+  display: grid;
+  gap: 3rem;
+}
+
+.figma-embed h3 {
+  font-family: var(--font-grotesk);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0 0 0.85rem;
+}
+
+.figma-embed iframe {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  display: block;
+  border: 1px solid var(--border-solid);
+  border-radius: 2px;
+  background: var(--surface-2);
+}
+
+.external-link-block {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding-top: 0.5rem;
+}
+
+.external-link-block h3 {
+  font-family: var(--font-grotesk);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin: 0;
 }
 
 /* ── Book viewer ── */

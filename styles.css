@@ -2,23 +2,26 @@
 
 /* ── Design tokens ── */
 :root {
-  --bg:          #f4ede3;
-  --surface:     #ede6d8;
-  --surface-2:   #e5ddd0;
-  --text:        #1c1309;
-  --muted:       #7a6852;
-  --border:      rgba(28, 19, 9, 0.14);
-  --border-solid: #d5ccbf;
-  --btn-primary-bg: #1c1309;
-  --btn-primary-fg: #f4ede3;
-  --custom-cursor-accent: #4ee44e;
-  --custom-cursor-background: #1c1309;
+  /* palette: #C1B296 sand · #BFAE69 gold · #ACA365 olive · #84A3A6 teal · #A37E51 caramel */
+  --bg:          #f1ece1;              /* tint of #C1B296 */
+  --surface:     #e4dcca;              /* tint of #C1B296 */
+  --surface-2:   #d7cdb8;              /* tint of #C1B296 */
+  --text:        #2b2114;              /* deep shade of #A37E51 */
+  --muted:       #7e5e39;              /* darkened #A37E51 — AA on --bg */
+  --accent:      #84a3a6;
+  --accent-warm: #a37e51;
+  --border:      rgba(43, 33, 20, 0.16);
+  --border-solid: #c1b296;
+  --btn-primary-bg: #2b2114;
+  --btn-primary-fg: #f1ece1;
+  --custom-cursor-accent: #84a3a6;
+  --custom-cursor-background: #2b2114;
   --custom-cursor-font: 'Host Grotesk', system-ui, sans-serif;
   --custom-cursor-z-index: 9999;
 
   /* placeholder gradients for cards without images */
-  --placeholder-a: linear-gradient(135deg, #e5ddd0 0%, #d8cfbf 100%);
-  --placeholder-b: linear-gradient(135deg, #dfd8cc 0%, #cfc5b5 100%);
+  --placeholder-a: linear-gradient(135deg, #bfae69 0%, #aca365 100%);
+  --placeholder-b: linear-gradient(135deg, #9fb7b9 0%, #84a3a6 100%);
 
   /* typography */
   --font-serif:   'Instrument Serif', Georgia, 'Times New Roman', serif;
@@ -169,7 +172,7 @@ body.custom-cursor-clicking .custom-cursor-dot {
   top: 0;
   z-index: 40;
   border-bottom: 1px solid var(--border);
-  background: rgba(244, 237, 227, 0.92);
+  background: rgba(241, 236, 225, 0.92);
   backdrop-filter: blur(12px);
 }
 
@@ -490,9 +493,9 @@ body.custom-cursor-clicking .custom-cursor-dot {
 }
 
 .filter-pill.active {
-  background: var(--btn-primary-bg);
-  color: var(--btn-primary-fg);
-  border-color: var(--btn-primary-bg);
+  background: var(--accent);
+  color: var(--text);
+  border-color: var(--accent);
 }
 
 .work-grid {
@@ -511,7 +514,7 @@ body.custom-cursor-clicking .custom-cursor-dot {
   display: block;
 }
 
-.wk-card:hover { border-color: var(--muted); }
+.wk-card:hover { border-color: var(--accent-warm); }
 
 .wk-card__image {
   width: 100%;
@@ -546,8 +549,8 @@ body.custom-cursor-clicking .custom-cursor-dot {
   font-weight: 600;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-  color: var(--muted);
-  opacity: 0.6;
+  color: var(--text);
+  opacity: 0.55;
 }
 
 .wk-card__body { padding: 1.75rem; }

@@ -338,7 +338,7 @@ body.custom-cursor-clicking .custom-cursor-dot {
   border-radius: 2px;
   background:
     linear-gradient(180deg, rgba(28, 19, 9, 0.02), rgba(28, 19, 9, 0.16)),
-    url("https://assets.charlesccbui.com/assets/cb-cover.webp") center top / cover no-repeat,
+    url("https://assets.charlesccbui.com/cb-cover.webp") center top / cover no-repeat,
     var(--surface);
 }
 

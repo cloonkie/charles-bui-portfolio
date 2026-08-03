@@ -3,19 +3,19 @@
 /* ── Design tokens ── */
 :root {
   /* palette: #C1B296 sand · #BFAE69 gold · #ACA365 olive · #84A3A6 teal · #A37E51 caramel */
-  --bg:          #f1ece1;              /* tint of #C1B296 */
+  --bg:          #FAF9F8;
   --surface:     #e4dcca;              /* tint of #C1B296 */
   --surface-2:   #d7cdb8;              /* tint of #C1B296 */
-  --text:        #2b2114;              /* deep shade of #A37E51 */
+  --text:        #333333;
   --muted:       #7e5e39;              /* darkened #A37E51 — AA on --bg */
   --accent:      #84a3a6;
   --accent-warm: #a37e51;
-  --border:      rgba(43, 33, 20, 0.16);
+  --border:      rgba(51, 51, 51, 0.16);
   --border-solid: #c1b296;
-  --btn-primary-bg: #2b2114;
-  --btn-primary-fg: #f1ece1;
+  --btn-primary-bg: #333333;
+  --btn-primary-fg: #FAF9F8;
   --custom-cursor-accent: #84a3a6;
-  --custom-cursor-background: #2b2114;
+  --custom-cursor-background: #333333;
   --custom-cursor-font: 'Host Grotesk', system-ui, sans-serif;
   --custom-cursor-z-index: 9999;
 
@@ -172,7 +172,7 @@ body.custom-cursor-clicking .custom-cursor-dot {
   top: 0;
   z-index: 40;
   border-bottom: 1px solid var(--border);
-  background: rgba(241, 236, 225, 0.92);
+  background: rgba(250, 249, 248, 0.92);
   backdrop-filter: blur(12px);
 }
 
@@ -313,6 +313,13 @@ body.custom-cursor-clicking .custom-cursor-dot {
 }
 
 /* ── About ── */
+.about-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 420px);
+  gap: 4rem;
+  align-items: start;
+}
+
 .about-content p {
   font-family: var(--font-body);
   color: var(--muted);
@@ -323,6 +330,16 @@ body.custom-cursor-clicking .custom-cursor-dot {
 }
 
 .about-content p:last-child { margin-bottom: 0; }
+
+.about-image-frame {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border: 1px solid var(--border-solid);
+  border-radius: 2px;
+  background:
+    linear-gradient(135deg, rgba(132, 163, 166, 0.18), rgba(191, 174, 105, 0.14)),
+    var(--surface);
+}
 
 /* ── Tags ── */
 .tags {
@@ -1358,6 +1375,15 @@ body.custom-cursor-clicking .custom-cursor-dot {
   .slide-deck { grid-template-columns: repeat(2, 1fr); }
 
   .hero h1 { font-size: clamp(2.5rem, 8vw, 4rem); }
+
+  .about-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .about-image-frame {
+    max-width: 420px;
+  }
 }
 
 @media (max-width: 640px) {

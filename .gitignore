@@ -1,6 +1,7 @@
 node_modules/
 dist/
 .asset-backups/
+.wrangler/
 r2-upload/
 assets/branding/
 assets/creative-work/

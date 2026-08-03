@@ -8,7 +8,6 @@ const rootFiles = [
   "resume.html",
   "styles.css",
   "script.js",
-  "Resume.png",
   "CNAME",
   "_headers",
   "_redirects",

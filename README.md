@@ -20,8 +20,9 @@ assets/
 └── usc-capstone/
     ├── events/           # 5 event photos (JPG)
     └── sizzle/           # 18 sizzle reel clips (MP4)
-Resume.png                # Downloadable resume
 ```
+
+The resume download is hosted externally on Cloudflare R2 and linked from `resume.html`.
 
 ## Design
 

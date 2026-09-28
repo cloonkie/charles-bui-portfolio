@@ -13,6 +13,34 @@ document.querySelectorAll('.nav-links a').forEach(link => {
   if (link.getAttribute('href') === currentFile) link.classList.add('active');
 });
 
+// Reveal each section as one unit so its contents arrive together, without a stagger.
+(function () {
+  const revealGroups = Array.from(
+    document.querySelectorAll('main > section'),
+    section => section.querySelector(':scope > .container') || section,
+  );
+  if (!revealGroups.length) return;
+
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (reducedMotion || !('IntersectionObserver' in window)) return;
+
+  document.documentElement.classList.add('scroll-reveal-enabled');
+  revealGroups.forEach(group => group.classList.add('scroll-reveal'));
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      observer.unobserve(entry.target);
+    });
+  }, {
+    threshold: 0.08,
+    rootMargin: '0px 0px -6% 0px',
+  });
+
+  revealGroups.forEach(group => observer.observe(group));
+})();
+
 (function () {
   const finePointer = window.matchMedia('(any-pointer: fine)').matches;
   const coarseOnly = window.matchMedia('(pointer: coarse)').matches && !finePointer;

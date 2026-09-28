@@ -10,7 +10,9 @@ Static marketing portfolio for **Charles Bui** — digital media strategist base
 | `work.html` | All projects with filter pills by discipline |
 | `resume.html` | Experience, education, and hobbies |
 | `projects/indeed.html` | Indeed 2023 Media Plan — visual case study |
-| `projects/usc-capstone.html` | USC Capstone — Live Music Experience gallery + sizzle reel |
+| `projects/usc-capstone.html` | Dolby Space Digital Media Management case study |
+| `projects/gallery.html` | Baby shower, graduation, and concert photography galleries |
+| `projects/bauer-brand-engagement.html` | University of Houston brand strategy and design case study |
 
 ## Assets
 

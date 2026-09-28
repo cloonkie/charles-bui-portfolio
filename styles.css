@@ -978,6 +978,32 @@ body.custom-cursor-clicking .custom-cursor-dot {
 
 .gallery-item:hover img { transform: scale(1.04); }
 
+/* Photography gallery: masonry flow preserves portrait and landscape crops */
+.photo-collection { scroll-margin-top: 5rem; }
+
+.photo-gallery {
+  columns: 3 280px;
+  column-gap: 1rem;
+}
+
+.photo-gallery .gallery-item {
+  break-inside: avoid;
+  overflow: hidden;
+  margin: 0 0 1rem;
+  border-radius: 2px;
+  border: 1px solid var(--border-solid);
+  background: var(--surface-2);
+}
+
+.photo-gallery .gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.photo-gallery .gallery-item:hover img { transform: scale(1.025); }
+
 /* Slide deck grid */
 .slide-deck {
   display: grid;
